@@ -1,6 +1,6 @@
 # MAUI Custom Dropdown/Picker
 
-This code is working with `.NET 8 MAUI` and the `CommunityToolkit.Maui` version 9.0.3. The component works for iOS, Android and Windows. The component appears 
+This code is working with `.NET 8 MAUI` and the `CommunityToolkit.Maui` version 9.0.3. The component works for iOS, Android and Windows. The component appears like a textbox but when the user clicks on it, the popup appeares and shows the items based on the `ItemTemplate`. When the user selects a value, the component shows the value of the property `DisplayMember`.
 
 ## Usage
 
@@ -14,7 +14,6 @@ In a `ContentPage` or `ContentView`, you can add
 and then use the dropdown like this
 
 ```xml
-
 <ddl:DropDownButton
 	x:Name="ddbGender"
 	Margin="0,0,0,15"
