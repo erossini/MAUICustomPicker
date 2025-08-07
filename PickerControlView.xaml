@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+	x:Class="LanguageInUse.Components.CustomPicker.PickerControlView"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:popups="clr-namespace:LanguageInUse.Components.CustomPicker"
+	xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+	VerticalOptions="Center">
+
+	<toolkit:Popup.Resources>
+		<Style TargetType="{x:Type popups:PickerControlView}">
+			<Setter Property="Size" Value="{OnIdiom Default='300,300', Desktop='400,300', Tablet='400,300'}" />
+			<Setter Property="Color" Value="White" />
+			<Setter Property="HorizontalOptions" Value="Center" />
+			<Setter Property="VerticalOptions" Value="Center" />
+			<Setter Property="CanBeDismissedByTappingOutsideOfPopup" Value="True" />
+		</Style>
+	</toolkit:Popup.Resources>
+
+	<Grid x:Name="grv" BackgroundColor="#dcdcdc">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<VerticalStackLayout
+			Padding="10,5,5,5"
+			BackgroundColor="#dcdcdc"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand">
+			<Label
+				x:Name="labelTitle"
+				FontAttributes="Bold"
+				FontSize="22"
+				Text="Select Item"
+				TextColor="Black"
+				VerticalTextAlignment="Center" />
+		</VerticalStackLayout>
+
+		<StackLayout Grid.Row="1" Background="White">
+			<CollectionView
+				x:Name="clPickerView"
+				Margin="10,0,10,5"
+				BackgroundColor="White"
+				HorizontalOptions="FillAndExpand"
+				SelectionChanged="clPickerView_SelectionChanged"
+				SelectionMode="Single"
+				VerticalOptions="FillAndExpand" />
+		</StackLayout>
+	</Grid>
+</toolkit:Popup>
